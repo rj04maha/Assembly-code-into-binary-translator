@@ -1,0 +1,48 @@
+alpha: ADD X0, X5, X10;heyy
+ADDI X3, X6, #89;heyy
+ADDIS X1, X29, #4095;heyy
+ADDS X8, X2, X18;heyy
+bravo: AND X14, X4, X30;heyy
+charlie: ANDI X27, X19, #128;heyy
+ANDIS X5, X12, #120;heyy
+ANDS X15, X22, X26;heyy
+B echo;heyy
+B.EQ alpha;heyy
+B.NE foxtrot		; this is a comment
+B.HS bravo ; here's another one
+B.LO charlie;heyy
+B.MI alpha;right on top of the code!
+B.PL delta;heyy
+B.VS echo;heyy
+delta: B.VC foxtrot;heyy
+B.HI bravo;heyy
+B.LS bravo;;;;;multiple semicolons!
+B.GE golf;heyy
+B.LT charlie;heyy
+B.GT delta;heyy
+B.LE foxtrot;B.LE foxtrot
+B.AL echo;because I'm a jerk
+B.NV alpha;heyy
+BL bravo;heyy
+BR X8;heyy
+CBNZ X10, golf;heyy
+echo: CBZ SP, charlie;did you know: comments can have colons?
+EOR X9, X7, X11;heyy
+EORI LR, X13, #0;heyy
+LDUR X16, [SP, #-80];heyy
+LSL X17, X20, #21;heyy
+LSR X28, X25, #3;heyy
+ASR X21, X6, #63;heyy
+ORR X3, X22, X17;heyy
+ORRI X16, X24, #45;what if I repeat a label? charlie:
+foxtrot: STUR X23, [X0, #13];or add a new one? hotel:
+SUB X19, XZR, X17;heyy
+SUBI X26, X9, #1234;heyy
+SUBIS X29, X12, #3;heyy
+SUBS X4, X8, X18;heyy
+CMP SP, X13;heyy;heyy
+CMPI X1, #10;heyy
+MOV X5, X25;heyy
+NOP;heyy
+NEG X23, X10;heyy
+golf: RET ;    Good luck, Commander.

@@ -1,0 +1,20 @@
+fib: CMPI X0, #3
+B.GE else
+ADDI X0, XZR, #1
+RET
+else: SUBI SP, SP, #24
+STUR LR, [SP, #0]
+STUR X19, [SP, #8]
+STUR X20, [SP, #16]
+MOV X19, X0
+SUBI X0, X0, #1
+BL fib
+MOV X20, X0
+SUBI X0, X19, #2
+BL fib
+ADD X0, X0, X20
+LDUR X20, [SP, #16]
+LDUR X19, [SP, #8]	
+LDUR LR, [SP, #0]
+ADDI SP, SP, #24
+RET
